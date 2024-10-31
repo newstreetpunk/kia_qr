@@ -6,6 +6,8 @@
     "build": "APP_ENV=production vite build --emptyOutDir",
     "preview": "APP_ENV=production vite preview",
     "prod": "APP_ENV=production vite build --emptyOutDir && rm -rf assets && mv _site/assets assets && mv _site/.vite/manifest.json assets/manifest.json && rm -rf _site",
+    "assets_sync_test": "rsync -av --delete --dry-run ./assets qr_alexsab_r_usr@195.2.79.153:~/www/qr/v1",
+    "assets_sync": "rsync -av --delete ./assets qr_alexsab_r_usr@195.2.79.153:~/www/qr/v1",
     "\n# WINDOWS SCRIPTS:": "",
     "dev_win": "cross-env APP_ENV=development vite --host --open",
     "php_win": "concurrently \"cross-env APP_ENV=development vite --port 5133\" \"cross-env APP_ENV=development php -S 127.0.0.1:5134 -t ./\"",
